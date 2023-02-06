@@ -1,3 +1,4 @@
+
 sudo apt install nginx certbot python3-certbot-nginx -y
 
 read -p "Enter Your Domain: " DOMAIN
