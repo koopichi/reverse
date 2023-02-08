@@ -3,11 +3,11 @@ sudo apt install nginx certbot python3-certbot-nginx -y
 
 read -p "Your Domain: " DOMAIN
 
-cpd(){
+cpd () {
 cp /etc/nginx/sites-available/default /etc/nginx/sites-available/$DOMAIN
 }
 
-lnd(){
+lnd () {
 ln -s /etc/nginx/sites-available/$DOMAIN /etc/nginx/sites-enabled/
 }
 
