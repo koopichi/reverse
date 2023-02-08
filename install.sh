@@ -1,22 +1,17 @@
 
 sudo apt install nginx certbot python3-certbot-nginx -y
 
-read -p "Enter Your Domain: " DOMAIN
-mkdomain(){
+read -p "Your Domain: " DOMAIN
+
+cpd(){
 cp /etc/nginx/sites-available/default /etc/nginx/sites-available/$DOMAIN
 }
-mkdomain
-echo "copying..."
+cpd
 
-lndomain(){
+lnd(){
 ln -s /etc/nginx/sites-available/$DOMAIN /etc/nginx/sites-enabled/
 }
-
-lndomain
-echo "ln the $DOMAIN ..."
-
-
-echo "edit the file..."
+lnd
 
 sed -i "s/_;/$DOMAIN;/" "/etc/nginx/sites-available/$DOMAIN"
 sed -i "s/ default_server//" "/etc/nginx/sites-available/$DOMAIN"
