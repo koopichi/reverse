@@ -1,9 +1,9 @@
-location /dl {
+location /api {
         if ($http_upgrade != "websocket") {
             return 404;
         }
 
-        location ~ /dl/\d\d\d\d\d$ {
+        location ~ /api/\d\d\d\d\d$ {
             if ($request_uri ~* "([^/]*$)" ) {
                set $port $1;
             }
